@@ -1,0 +1,1968 @@
+<script>
+  fetch("http://localhost:8000/exibir_dados.php")
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      data.forEach((item) => {
+        html += `Número de Registro: ${item.registro}`;
+      });
+      document.getElementById("dados").innerHTML = html;
+    })
+    .catch((err) => console.error("Erro ao carregar dados: ", err));
+</script>
+
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost:8080/page/portfolio?theme=landing -->
+<html lang="en-us" data-bs-theme="auto">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--<base href="/themes/landing/">-->
+    <base href="." />
+
+    <title>Portfolio</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="canonical" href="http://localhost:8080/themes/landing/" />
+
+    <link
+      id="landing-css"
+      href="./Portfolio_files/style.bundle.css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      id="vvvebjs-css"
+      href="./Portfolio_files/custom.css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <style></style>
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Feed"
+      href="http://localhost:8080/feed/posts"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Comments Feed"
+      href="http://localhost:8080/feed/comments"
+    />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="http://localhost:8080/media/favicon.ico"
+      data-v-global-site.favicon=""
+    />
+
+    <link rel="manifest" href="http://localhost:8080/manifest.webmanifest" />
+
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="http://localhost:8080/page/portfolio"
+    />
+    <style id="vvvebjs-styles"></style>
+    <link href="./Portfolio_files/admin-bar.css" rel="stylesheet" />
+  </head>
+
+  <body
+    class="page"
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+  >
+    <div id="vvveb-admin">
+      <ul>
+        <li class="v-logo">
+          <a href="https://www.vvveb.com/" target="_blank"
+            ><div class="vvveb-logo"></div
+          ></a>
+          <ul>
+            <li>
+              <a href="https://www.vvveb.com/" target="_blank">
+                <i class="la la-home"></i>Vvveb Homepage
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.vvveb.com/" target="_blank">
+                <i class="la la-file-alt"></i>Documentation
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/givanz/Vvveb/discussions"
+                target="_blank"
+              >
+                <i class="la la-sms"></i>Forums
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://localhost:8080/vadmin-dces9ybe/index.php"
+            ><i class="icon-pulse-outline"></i>Admin</a
+          >
+          <ul>
+            <li>
+              <a href="http://localhost:8080/vadmin-dces9ybe/index.php"
+                ><i class="icon-pulse-outline"></i>Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=editor/editor&amp;url=/&amp;template=index.html"
+                ><i class="icon-color-wand-outline"></i>Edit website</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/posts&amp;type=page"
+                class="has-submenu"
+                ><i class="icon-document-outline"></i>Pages</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/posts&amp;type=page"
+                    ><i class="la la-file-invoice"></i>Pages</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/post&amp;type=page"
+                    ><i class="la la-plus-circle"></i>Add new page</a
+                  >
+                </li>
+                <li>
+                  <span>Taxonomy</span>
+                  <hr />
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/menus&amp;type=page"
+                    ><i class="la la-boxes"></i>Menus</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=media/media"
+                ><i class="icon-images-outline"></i>Media library</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/users"
+                class="has-submenu"
+                ><i class="icon-people-outline"></i>Users</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/users"
+                    ><i class="la la-user"></i>Users</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/user"
+                    ><i class="la la-plus-circle"></i>Add new user</a
+                  >
+                </li>
+                <li>
+                  <span>Groups</span>
+                  <hr />
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/user-groups"
+                    ><i class="la la-user-friends"></i>User groups</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/user-group"
+                    ><i class="la la-plus-circle"></i>Add new group</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=product/products"
+                ><i></i>Ecommerce</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=order/orders"
+                class="has-submenu"
+                ><i class="icon-bag-handle-outline"></i>Sales</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=order/orders"
+                    ><i class="la la-file-invoice-dollar"></i>Orders</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=order/subscriptions"
+                    ><i class="la la-retweet"></i>Subscriptions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=order/returns"
+                    ><i class="la la-undo"></i>Returns</a
+                  >
+                </li>
+                <li>
+                  <span>Marketing</span>
+                  <hr />
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=order/coupons"
+                    ><i class="la la-percentage"></i>Discount coupons</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/sites"
+                ><i></i>Configuration</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=plugin/plugins"
+                class="has-submenu"
+                ><i class="icon-extension-puzzle-outline"></i>Plugins</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=plugin/plugins"
+                    ><i class="la la-plug"></i>Installed Plugins</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=plugin/market"
+                    ><i class="la la-plus-circle"></i>Add new plugin</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=editor/code&amp;type=plugins"
+                    ><i class="la la-code"></i>Code editor</a
+                  >
+                </li>
+                <li>
+                  <span>Plugins</span>
+                  <hr />
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=theme/themes"
+                class="has-submenu"
+                ><i class="icon-copy-outline"></i>Themes</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=theme/themes"
+                    ><i class="la la-brush"></i>Installed Themes</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=theme/market"
+                    ><i class="la la-plus-circle"></i>Add new</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=editor/code&amp;type=themes"
+                    ><i class="la la-code"></i>Code editor</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/sites"
+                class="has-submenu"
+                ><i class="icon-settings-outline"></i>Settings</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/sites"
+                    class="has-submenu"
+                    ><i class="la la-stop la-90"></i>Sites</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/sites"
+                        ><i class="la la-stop"></i>Sites</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/site"
+                        ><i class="la la-plus-circle"></i>Add new</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=admin/users"
+                    class="has-submenu"
+                    ><i class="la la-user"></i>Admin users</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=admin/users"
+                        ><i class="la la-user"></i>Users</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=admin/user"
+                        ><i class="la la-user-plus"></i>Add new user</a
+                      >
+                    </li>
+                    <li>
+                      <span>Roles</span>
+                      <hr />
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=admin/roles"
+                        ><i class="la la-user-cog"></i>Manage Roles</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=admin/role"
+                        ><i class="la la-user-tag"></i>Add Role</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/menus"
+                    class="has-submenu"
+                    ><i class="la la-file-alt"></i>Content</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/taxonomies"
+                        ><i class="la la-boxes"></i>Taxonomies</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/post-types"
+                        ><i class="la la-file-alt"></i>Post types</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/product-types"
+                        ><i class="la la-box"></i>Product types</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/users"
+                    class="has-submenu"
+                    ><i class="la la-shopping-cart"></i>Ecommerce</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/subscription-plans"
+                        ><i class="la la-receipt"></i>Subscriptions plans</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/tax-types"
+                        class="has-submenu"
+                        ><i class="la la-file-invoice-dollar"></i>Taxes</a
+                      >
+                      <ul class="submenu">
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/tax-types"
+                            ><i class="la la-file-invoice"></i>Tax types</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/tax-rates"
+                            ><i class="la la-file-invoice-dollar"></i>Tax
+                            rates</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/order-statuses"
+                        class="has-submenu"
+                        ><i class="la la-tags"></i>Statuses</a
+                      >
+                      <ul class="submenu">
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/stock-statuses"
+                            ><i class="la la-box"></i>Stock</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/subscription-statuses"
+                            ><i class="la la-retweet"></i>Subscription</a
+                          >
+                        </li>
+                        <li>
+                          <span>Order</span>
+                          <hr />
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/order-statuses"
+                            ><i class="la la-file-invoice"></i>Order</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/payment-statuses"
+                            ><i class="la la-coins"></i>Payment</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/shipping-statuses"
+                            ><i class="la la-shipping-fast"></i>Shipping</a
+                          >
+                        </li>
+                        <li>
+                          <span>Returns</span>
+                          <hr />
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/return-statuses"
+                            ><i class="la la-undo"></i>Return status</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/return-resolutions"
+                            ><i class="la la-exchange-alt"></i>Return
+                            resolutions</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/return-reasons"
+                            ><i class="la la-undo-alt"></i>Return reasons</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/weight-types"
+                        class="has-submenu"
+                        ><i class="la la-ruler"></i>Measurements</a
+                      >
+                      <ul class="submenu">
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/length-types"
+                            ><i class="la la-ruler-horizontal"></i>Length</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/weight-types"
+                            ><i class="la la-box"></i>Weight</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/languages"
+                    class="has-submenu"
+                    ><i class="la la-flag"></i>Localization</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/languages"
+                        ><i class="la la-language"></i>Languages</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/currencies"
+                        ><i class="la la-coins"></i>Currencies</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/region-groups"
+                        class="has-submenu"
+                        ><i class="la la-globe"></i>Geo location</a
+                      >
+                      <ul class="submenu">
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/countries"
+                            ><i class="la la-flag"></i>Countries</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/regions"
+                            ><i class="la la-city"></i>Regions</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=localization/region-groups"
+                            ><i class="la la-atlas"></i>Region Groups</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/email"
+                    class="has-submenu"
+                    ><i class="la la-tools"></i>System</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=settings/email"
+                        ><i class="la la-envelope"></i>Email settings</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache"
+                class="has-submenu"
+                ><i class="icon-build-outline"></i>Tools</a
+              >
+              <ul class="submenu">
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache"
+                    ><i class="la la-circle-notch"></i>Cache</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/backup"
+                    ><i class="la la-server"></i>Backup</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cron"
+                    ><i class="la la-history la-90"></i>Cron job</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/import"
+                    class="has-submenu"
+                    ><i class="la la-upload"></i>Import/Export</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <span>Content</span>
+                      <hr />
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/import"
+                        ><i class="la la-file-import"></i>Import content</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/export"
+                        ><i class="la la-file-export"></i>Export content</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/systeminfo"
+                    class="has-submenu"
+                    ><i class="la la-info-circle"></i>System info</a
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/systeminfo"
+                        ><i class="la la-info"></i>System Info</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/errorlog"
+                        ><i class="la la-bug"></i>Error log</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/update"
+                    ><i class="la la-sync"></i>Update</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=editor/editor&amp;template=portfolio.html&amp;url=/page/portfolio?theme=landing&amp;name=Portfolio&amp;post_id=14"
+          >
+            <i class="la la-paint-brush"></i>Design page</a
+          >
+        </li>
+
+        <li>
+          <a
+            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/post&amp;slug=portfolio&amp;type=page&amp;post_id=14"
+          >
+            <i class="la la-pencil-alt"></i>Edit page</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=content/comments&amp;status=0&amp;type=post"
+          >
+            <i class="la la-comments"></i>Comments</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=delete"
+          >
+            <i class="icon-reload-circle-outline"></i>
+            Clear cache</a
+          >
+          <ul>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=asset"
+                target="_blank"
+              >
+                <i class="la la-circle-notch"></i>
+                Frontend assets cache
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=template"
+                target="_blank"
+              >
+                <i class="la la-circle-notch"></i>Compiled templates
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=database"
+                target="_blank"
+              >
+                <i class="la la-circle-notch"></i>
+                Database</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=image"
+                target="_blank"
+              >
+                <i class="la la-circle-notch"></i>
+                Image resize cache
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=page"
+                target="_blank"
+              >
+                <i class="la la-circle-notch"></i>
+                Full page cache
+              </a>
+            </li>
+            <li class="dropdown-divider">
+              <hr />
+            </li>
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=tools/cache&amp;action=delete"
+                target="_blank"
+              >
+                <i class="la la-circle-notch"></i>
+                All cache
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="float-end">
+        <li>
+          <a href="http://localhost:8080/vadmin-dces9ybe/index.php"
+            ><i class="la la-user"></i>Admin</a
+          >
+          <ul style="right: 0">
+            <li>
+              <a
+                href="http://localhost:8080/vadmin-dces9ybe/index.php?module=admin/user&amp;admin_id=1"
+                ><i class="la la-edit"></i>Edit profile</a
+              >
+            </li>
+            <li>
+              <form
+                action="http://localhost:8080/vadmin-dces9ybe/index.php?module=user/login"
+                method="post"
+                enctype="multipart/form-data"
+                target="_blank"
+              >
+                <input type="hidden" name="csrf" data-v-csrf="" />
+                <input type="hidden" name="logout" />
+
+                <button
+                  type="submit"
+                  value="logout"
+                  class="btn btn-light text-dark w-100"
+                >
+                  <span class="loading d-none">
+                    <span
+                      class="spinner-border spinner-border-sm align-middle"
+                      role="status"
+                      aria-hidden="true"
+                    >
+                    </span>
+                    <span>Loading ...</span>...
+                  </span>
+
+                  <span class="button-text text-dark">
+                    <i class="la la-sign-out-alt"></i>Log out
+                  </span>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <nav
+      class="navigation-1 clearfix"
+      data-v-save-global="blank.html,.navigation-1"
+    >
+      <div id="top" class="top-nav clearfix">
+        <div class="container">
+          <div
+            class="d-flex justify-content-between flex-md-row d-flex flex-column flex-md-row"
+          >
+            <div class="nav">
+              <ul
+                class="list-inline"
+                data-v-component-site=""
+                data-v-id="1"
+                data-v-type="site"
+              >
+                <li
+                  class="list-inline-item"
+                  data-v-if="site.description.phone-number"
+                >
+                  <a
+                    href="tel:+55 (111) 123 777"
+                    class="p-2 p-md-0"
+                    title="Phone"
+                    data-v-site-description-phone-number=""
+                  >
+                    <i class="la la-phone"></i>
+                    <span
+                      class="text-muted"
+                      data-v-site-description-phone-number=""
+                      >+55 (111) 123 777</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="nav">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <div data-v-component-currency="">
+                    <form
+                      method="post"
+                      enctype="multipart/form-data"
+                      id="form-currency"
+                    >
+                      <a
+                        class="dropdown-toggle p-2 p-md-0"
+                        data-bs-toggle="dropdown"
+                        role="button"
+                        title="Currency "
+                        aria-expanded="false"
+                      >
+                        <span class="" data-v-currency-info-name=""
+                          >US Dollar</span
+                        >
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <div data-v-currency="">
+                          <button
+                            class="dropdown-item active"
+                            type="submit"
+                            value="USD"
+                            name="currency"
+                            data-v-currency-code=""
+                          >
+                            <span data-v-currency-sign_start="">$</span>
+                            <span data-v-currency-sign_end=""></span>
+                            <span class="ms-1" data-v-currency-name=""
+                              >US Dollar</span
+                            >
+                          </button>
+                        </div>
+                        <div data-v-currency="">
+                          <button
+                            class="dropdown-item"
+                            type="submit"
+                            value="EUR"
+                            name="currency"
+                            data-v-currency-code=""
+                          >
+                            <span data-v-currency-sign_start=""></span>
+                            <span data-v-currency-sign_end="">€</span>
+                            <span class="ms-1" data-v-currency-name=""
+                              >Euro</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </li>
+                <li class="list-inline-item">
+                  <div data-v-component-language="">
+                    <form
+                      method="post"
+                      enctype="multipart/form-data"
+                      id="form-language"
+                    >
+                      <a
+                        class="dropdown-toggle p-2 p-md-0"
+                        data-bs-toggle="dropdown"
+                        role="button"
+                        title="Language"
+                        aria-expanded="false"
+                      >
+                        <span class="" data-v-language-info-name=""
+                          >English</span
+                        >
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <div data-v-language="">
+                          <button
+                            class="dropdown-item active"
+                            type="submit"
+                            value="en_US"
+                            name="language"
+                            data-v-language-code=""
+                            formaction="http://localhost:8080/page/portfolio"
+                          >
+                            <img
+                              src="./Portfolio_files/en.png"
+                              loading="lazy"
+                              class="me-1"
+                              data-v-language-img=""
+                            />
+
+                            <span data-v-language-name="">English</span>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    id="color-theme-switch"
+                    class="p-2 p-md-0"
+                    href="javascript:void(0);"
+                    role="button"
+                    title="Switch sidebar color theme"
+                  >
+                    <i class="la la-sun la-lg"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar navbar-expand-md">
+        <div class="container">
+          <div data-v-component-site="" data-v-id="1" data-v-type="site">
+            <a
+              class="navbar-brand"
+              href="http://localhost:8080/"
+              data-url=""
+              data-v-url-params='{"host":"www.*.*"}'
+            >
+              <span class="visually-hidden">Logo</span>
+              <img
+                src="./Portfolio_files/logo.png"
+                alt="Site logo"
+                loading="lazy"
+                class="logo-default"
+                data-v-site-logo=""
+              />
+              <img
+                src="./Portfolio_files/logo.png"
+                alt="Site logo sticky"
+                loading="lazy"
+                class="logo-sticky"
+                data-v-site-logo-sticky=""
+              />
+              <img
+                src="./Portfolio_files/logo-white.png"
+                alt="Site logo dark"
+                loading="lazy"
+                class="logo-default-dark"
+                data-v-site-logo-dark=""
+              />
+              <img
+                src="./Portfolio_files/logo-white.png"
+                alt="Site logo dark sticky"
+                loading="lazy"
+                class="logo-default-dark-sticky"
+                data-v-site-logo-dark-sticky=""
+              />
+            </a>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse"
+            id="navbar"
+            data-v-component-menu="header"
+            data-v-slug="main-menu"
+          >
+            <ul class="navbar-nav ms-auto" data-v-menu-items="">
+              <li
+                class="nav-item dropdown"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="42"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link"
+                  href="https://www3.crcpr.org.br/crcpr/portal/"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span
+                    data-v-menu-item-name=""
+                    data-v-if-not="category.type = &#39;text&#39;"
+                    class="    "
+                    >Home</span
+                  >
+                  <span data-v-menu-item-content=""></span>
+                </a>
+              </li>
+              <li
+                class="nav-item dropdown"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="59"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link"
+                  href="http://localhost:8080/page/about"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span
+                    data-v-menu-item-name=""
+                    data-v-if-not="category.type = &#39;text&#39;"
+                    class="    "
+                    >About</span
+                  >
+                  <span data-v-menu-item-content=""></span>
+                </a>
+              </li>
+              <li
+                class="nav-item dropdown"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="43"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link"
+                  href="http://localhost:8080/shop"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span
+                    data-v-menu-item-name=""
+                    data-v-if-not="category.type = &#39;text&#39;"
+                    class="    "
+                    >Shop</span
+                  >
+                  <span data-v-menu-item-content=""></span>
+                </a>
+              </li>
+              <li
+                class="nav-item dropdown has-dropdown position-static"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="67"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="javascript:void(0);"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-content=""
+                    ><img
+                      src="./Portfolio_files/vvveb.svg"
+                      height="24"
+                      alt=""
+                      class="me-2"
+                    />Mega menu</span
+                  >
+                </a>
+
+                <div class="dropdown-menu" data-v-menu-item-recursive="">
+                  <div
+                    data-v-menu-item=""
+                    class="nav-item"
+                    data-v-class-if-dropdown="category.children &gt; 0"
+                    data-v-id="68"
+                    data-v-component="menu"
+                    data-v-type="menu-item"
+                  >
+                    <a
+                      class="dropdown-item"
+                      data-v-class-if-active="category.active"
+                      href="javascript:void(0);"
+                      data-v-menu-item-url=""
+                    >
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="nav-item dropdown has-dropdown"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="63"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="http://localhost:8080/page/services"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span
+                    data-v-menu-item-name=""
+                    data-v-if-not="category.type = &#39;text&#39;"
+                    class="    "
+                    >Services</span
+                  >
+                  <span data-v-menu-item-content=""></span>
+                </a>
+
+                <div class="dropdown-menu" data-v-menu-item-recursive="">
+                  <div
+                    data-v-menu-item=""
+                    class="nav-item"
+                    data-v-class-if-dropdown="category.children &gt; 0"
+                    data-v-id="64"
+                    data-v-component="menu"
+                    data-v-type="menu-item"
+                  >
+                    <a
+                      class="dropdown-item"
+                      data-v-class-if-active="category.active"
+                      href="http://localhost:8080/page/pricing"
+                      data-v-menu-item-url=""
+                    >
+                      <span
+                        data-v-menu-item-name=""
+                        data-v-if-not="category.type = &#39;text&#39;"
+                        class="    "
+                        >Pricing</span
+                      >
+                    </a>
+                  </div>
+                  <div
+                    data-v-menu-item=""
+                    class="nav-item"
+                    data-v-class-if-dropdown="category.children &gt; 0"
+                    data-v-id="65"
+                    data-v-component="menu"
+                    data-v-type="menu-item"
+                  >
+                    <a
+                      class="dropdown-item"
+                      data-v-class-if-active="category.active"
+                      href="http://localhost:8080/page/services"
+                      data-v-menu-item-url=""
+                    >
+                      <span
+                        data-v-menu-item-name=""
+                        data-v-if-not="category.type = &#39;text&#39;"
+                        class="    "
+                        >Services</span
+                      >
+                    </a>
+                  </div>
+                  <div
+                    data-v-menu-item=""
+                    class="nav-item"
+                    data-v-class-if-dropdown="category.children &gt; 0"
+                    data-v-id="66"
+                    data-v-component="menu"
+                    data-v-type="menu-item"
+                  >
+                    <a
+                      class="dropdown-item"
+                      data-v-class-if-active="category.active"
+                      href="http://localhost:8080/page/portfolio"
+                      data-v-menu-item-url=""
+                    >
+                      <span
+                        data-v-menu-item-name=""
+                        data-v-if-not="category.type = &#39;text&#39;"
+                        class="    "
+                        >Portfolio</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="nav-item dropdown"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="46"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link"
+                  href="http://localhost:8080/blog"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span
+                    data-v-menu-item-name=""
+                    data-v-if-not="category.type = &#39;text&#39;"
+                    class="    "
+                    >Blog</span
+                  >
+                  <span data-v-menu-item-content=""></span>
+                </a>
+              </li>
+              <li
+                class="nav-item dropdown"
+                data-v-menu-item=""
+                data-v-class-if-has-dropdown="category.children &gt; 0"
+                data-v-class-if-position-static="category.has-text"
+                data-v-id="49"
+                data-v-component="menu"
+                data-v-type="menu-item"
+              >
+                <a
+                  class="nav-link"
+                  href="http://localhost:8080/page/contact"
+                  data-v-class-if-dropdown-toggle="category.children &gt; 0"
+                  data-v-class-if-active="category.active"
+                  aria-expanded="false"
+                  data-v-menu-item-url=""
+                >
+                  <span
+                    data-v-menu-item-name=""
+                    data-v-if-not="category.type = &#39;text&#39;"
+                    class="    "
+                    >Contact us</span
+                  >
+                  <span data-v-menu-item-content=""></span>
+                </a>
+              </li>
+
+              <li class="nav-toggle">
+                <div class="dropdown nav-item">
+                  <a
+                    class="dropdown-toggle nav-link"
+                    href="http://localhost:8080/user"
+                    role="button"
+                    id="user-dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-v-url="user/index"
+                  >
+                    <i class="la la-lg la-user"></i>
+                    <span class="visually-hidden">User</span>
+                  </a>
+
+                  <div
+                    class="dropdown-menu dropdown-menu-end login-box user-box p-4"
+                    aria-labelledby="user-dropdown"
+                  >
+                    <div data-v-component-user="">
+                      <div class="notifications" data-v-notifications=""></div>
+
+                      <form
+                        action="http://localhost:8080/user/login"
+                        method="post"
+                        enctype="multipart/form-data"
+                        data-v-url="user/login/index"
+                        data-v-vvveb-action="login"
+                        data-v-vvveb-on="submit"
+                        class="login-form"
+                      >
+                        <input
+                          type="hidden"
+                          name="csrf"
+                          data-v-csrf=""
+                          value="R7907UpJdds7eqgE"
+                        />
+
+                        <div
+                          class="login-form"
+                          data-v-if-not="component.user_id"
+                        >
+                          <div class="mb-3">
+                            <label class="form-label" for="input-email"
+                              >E-Mail Address</label
+                            >
+                            <input
+                              type="email"
+                              name="email"
+                              value=""
+                              placeholder="E-Mail Address"
+                              id="user-email"
+                              class="form-control"
+                              data-v-user-email=""
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label" for="input-password"
+                              >Password</label
+                            >
+
+                            <div class="input-group">
+                              <input
+                                type="password"
+                                minlength="4"
+                                autocorrect="off"
+                                autocomplete="current-password"
+                                class="form-control"
+                                placeholder="Password"
+                                id="user-password"
+                                name="password"
+                                value=""
+                                aria-label="Password"
+                                required=""
+                              />
+                              <div class="input-group-append">
+                                <button
+                                  class="btn px-3 border border-start-0"
+                                  type="button"
+                                  onclick="togglePasswordInput(this, &#39;user-password&#39;)"
+                                >
+                                  <i class="la la-eye-slash"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <button
+                            type="submit"
+                            value="Login"
+                            class="btn btn-primary btn-login w-100"
+                          >
+                            <span class="loading d-none">
+                              <span
+                                class="spinner-border spinner-border-sm align-middle"
+                                role="status"
+                                aria-hidden="true"
+                              >
+                              </span>
+                              <span>Authenticating</span>...
+                            </span>
+
+                            <span class="button-text">
+                              Login
+                              <i class="la la-arrow-right float-end ms-2"></i>
+                            </span>
+                          </button>
+                          <div class="my-2"></div>
+                          <a
+                            href="http://localhost:8080/user/reset"
+                            data-v-url="user/reset/index"
+                            class="my-2"
+                            >Forgotten Password</a
+                          >
+
+                          <div class="my-2"></div>
+
+                          <hr />
+                          <span>Don’t have an account?</span>
+                          <br />
+                          <a
+                            href="http://localhost:8080/user/signup"
+                            data-v-url="user/signup/index"
+                            >Register Account</a
+                          >
+                          <span class="text-body-tertiary">|</span>
+                          <a
+                            href="http://localhost:8080/user/login"
+                            data-v-url="user/login/index"
+                            >Login</a
+                          >
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-toggle">
+                <div
+                  class="dropdown nav-item mini-cart"
+                  data-v-component-cart=""
+                >
+                  <a
+                    class="dropdown-toggle cart-info nav-link"
+                    href="http://localhost:8080/cart"
+                    role="button"
+                    id="cart-dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-v-url="cart/cart/index"
+                  >
+                    <i class="la la-lg la-shopping-bag"></i>
+                    <span class="visually-hidden">Cart</span>
+                  </a>
+
+                  <div
+                    class="dropdown-menu dropdown-menu-end cart-box"
+                    aria-labelledby="cart-dropdown"
+                  >
+                    <div>
+                      <div class="table-responsive">
+                        <table class="table cart-table align-middle mb-0">
+                          <tbody>
+                            <tr data-v-if-not="cart.total_items" class="    ">
+                              <td colspan="100">
+                                <div class="d-flex p-2">
+                                  <div class="text-center p-2 opacity-75">
+                                    <i class="la la-2x la-shopping-bag"></i>
+                                  </div>
+                                  <div class="p-2">
+                                    <strong>Empty cart</strong>
+                                    <br />
+                                    <span class="text-muted"
+                                      >No products added yet!</span
+                                    >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <button
+              class="btn btn-outline-secondary border-0"
+              type="submit"
+              title="Search"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <div class="la-flip-horizontal">
+                <i class="la la-search la-lg" aria-hidden="true"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="inner-page-hero"
+      data-v-component-post=""
+      data-v-id="14"
+      data-v-type="post"
+    >
+      <div>
+        <div class="title-container">
+          <div class="container">
+            <nav
+              aria-label="breadcrumb"
+              class="text-muted text-small"
+              data-v-component-breadcrumb=""
+            >
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item" data-v-breadcrumb-item="">
+                  <a
+                    href="http://localhost:8080/"
+                    data-v-breadcrumb-item-url=""
+                    data-v-if="breadcrumb.url"
+                    class="    "
+                  >
+                    <span data-v-breadcrumb-item-text="">Home</span>
+                  </a>
+                </li>
+                <li class="breadcrumb-item" data-v-breadcrumb-item="">
+                  <span
+                    data-v-breadcrumb-item-text=""
+                    data-v-if-not="breadcrumb.url"
+                    class="    "
+                    >portfolio</span
+                  >
+                </li>
+              </ol>
+            </nav>
+
+            <h1 data-v-post-name="" id="dados"></h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main
+      id="site-content"
+      data-v-component-post=""
+      data-v-id="14"
+      data-v-type="post"
+    >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div>
+              <div class="" data-v-post-content="">Portfolio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="footer-1"
+      title="footer-1"
+      data-v-save-global="index.html,.footer-1"
+    >
+      <div
+        class="container"
+        data-v-component-menu="footer"
+        data-v-slug="main-footer"
+      >
+        <div class="row" data-v-menu-items="">
+          <div class="col-md">
+            <div data-v-component-site="" data-v-id="1" data-v-type="site">
+              <img
+                src="./Portfolio_files/logo-white.png"
+                alt="Site logo dark"
+                loading="lazy"
+                class="logo-default-dark"
+                data-v-site-logo-dark=""
+              />
+              <img
+                src="./Portfolio_files/logo.png"
+                alt="Site logo"
+                loading="lazy"
+                class="logo-default"
+                data-v-site-logo=""
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-md"
+            data-v-menu-item=""
+            data-v-if="category.children &gt; 0"
+            data-v-id="53"
+            data-v-component="menu"
+            data-v-type="menu-item"
+          >
+            <div class="h6" data-v-menu-item-name="">Information</div>
+            <nav data-v-menu-item-recursive="">
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="78"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a href="http://localhost:8080/vendor" data-v-menu-item-url="">
+                  <span data-v-menu-item-name="">Vendors</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="77"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a href="http://localhost:8080/brand" data-v-menu-item-url="">
+                  <span data-v-menu-item-name="">Brands</span>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div
+            class="col-md"
+            data-v-menu-item=""
+            data-v-if="category.children &gt; 0"
+            data-v-id="56"
+            data-v-component="menu"
+            data-v-type="menu-item"
+          >
+            <div class="h6" data-v-menu-item-name="">Contact us</div>
+            <nav data-v-menu-item-recursive="">
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="76"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/page/about"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">About</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="73"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/user/return-form"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Returns</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="58"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/page/portfolio"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Portfolio</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="57"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/page/contact"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Contact us</span>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div
+            class="col-md"
+            data-v-menu-item=""
+            data-v-if="category.children &gt; 0"
+            data-v-id="69"
+            data-v-component="menu"
+            data-v-type="menu-item"
+          >
+            <div class="h6" data-v-menu-item-name="">My account</div>
+            <nav data-v-menu-item-recursive="">
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="72"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/user/orders"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Order history</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="71"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/user/wishlist"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Wishlist</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="79"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/cart/compare"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Compare</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="70"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/user/order-tracking"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Order tracking</span>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div
+            class="col-md"
+            data-v-menu-item=""
+            data-v-if="category.children &gt; 0"
+            data-v-id="50"
+            data-v-component="menu"
+            data-v-type="menu-item"
+          >
+            <div class="h6" data-v-menu-item-name="">Vvveb</div>
+            <nav data-v-menu-item-recursive="">
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="51"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a href="http://localhost:8080/" data-v-menu-item-url="">
+                  <span data-v-menu-item-name="">Home</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="52"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a href="http://localhost:8080/shop" data-v-menu-item-url="">
+                  <span data-v-menu-item-name="">Shop</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="75"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a
+                  href="http://localhost:8080/page/services"
+                  data-v-menu-item-url=""
+                >
+                  <span data-v-menu-item-name="">Services</span>
+                </a>
+              </div>
+              <div
+                data-v-menu-item=""
+                data-v-if="category.children == 0"
+                data-v-id="74"
+                data-v-component="menu"
+                data-v-type="menu-item"
+                class="        "
+              >
+                <a href="http://localhost:8080/blog" data-v-menu-item-url="">
+                  <span data-v-menu-item-name="">Blog</span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row">
+            <div class="text-muted flex-grow-1">
+              <a
+                class="btn-link text-muted"
+                href="http://localhost:8080/page/terms-conditions"
+                >Terms and conditions</a
+              >
+              |
+              <a
+                class="btn-link text-muted"
+                href="http://localhost:8080/page/privacy-policy"
+                >Privacy Policy</a
+              >
+            </div>
+            <div class="text-muted">
+              © <span data-v-year="">2023</span>
+              <span data-v-global-site.description.title="">Vvveb</span>.
+              <span>Powered by</span>
+              <a
+                href="https://vvveb.com/"
+                class="btn-link text-muted"
+                target="_blank"
+                >Vvveb</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="bg-image"></div>
+
+    <div
+      class="alert alert-light alert-dismissible fade alert-top"
+      role="alert"
+      style="display: none"
+    >
+      <div class="container">
+        <div class="message">Product was added to cart.</div>
+
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="searchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form action="http://localhost:8080/search" method="get">
+              <input type="hidden" name="route" value="search" />
+              <div class="input-group">
+                <input
+                  type="search"
+                  name="search"
+                  class="form-control"
+                  id="headerSearch"
+                  placeholder="Type for search"
+                  data-v-vvveb-action="search"
+                  data-selector=".search-results"
+                  data-v-vvveb-on="keyup"
+                />
+                <button
+                  class="btn btn-outline-primary border"
+                  type="submit"
+                  title="Search"
+                >
+                  <div class="la-flip-horizontal">
+                    <i class="la la-search la-lg" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </div>
+            </form>
+
+            <div class="search-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="page-loading-status"
+      class="progress top-0 position-fixed progress-bar"
+      role="progressbar"
+      aria-label="Page loading status"
+      aria-valuenow="100"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      style="
+        z-index: 10;
+        --bs-progress-bg: transparent;
+        --bs-progress-height: 1px;
+        width: 0%;
+      "
+    ></div>
+
+    <script
+      id="popper-js"
+      src="./Portfolio_files/popper.min.js.download"
+    ></script>
+
+    <script
+      id="bootstrap-js"
+      src="./Portfolio_files/bootstrap.min.js.download"
+    ></script>
+
+    <script id="app-js" src="./Portfolio_files/app.js.download"></script>
+
+    <link rel="stylesheet" href="./Portfolio_files/aos.css" />
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+          opacity: 1 !important;
+          transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+
+    <script src="./Portfolio_files/aos.js.download"></script>
+    <script src="./Portfolio_files/theme.js.download"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./Portfolio_files/cart.js.download"></script>
+  </body>
+</html>

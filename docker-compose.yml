@@ -9,7 +9,7 @@ services:
     ports:
       - "1433:1433"
     networks:
-      - app-network
+      - localhost-network
 
   backend:
     build: ./backend
@@ -21,18 +21,44 @@ services:
     ports:
       - "8000:80"
     networks:
-      - app-network
+      - localhost-network
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: vvveb
+      MYSQL_DATABASE: vvveb
+      MYSQL_USER: vvveb
+      MYSQL_PASSWORD: vvveb
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - localhost-network
 
   vvvebjs:
-    image: httpd:2.4
+    image: vvveb/vvvebcms:php8.3-fpm-alpine
+    environment:
+      DB_HOST: db
+      DB_DATABASE: vvveb
+      DB_USER: vvveb
+      DB_PASSWORD: vvveb
+      DB_ENGINE: mysqli
     container_name: vvvebjs_frontend
-    volumes:
-      - ./vvvebjs:/usr/local/apache2/htdocs/
     ports:
       - "8080:80"
+    volumes:
+      - ./vvveb_data:/var/www/vvveb/
+      - db:/var/lib/mysql
     networks:
-      - app-network
+      - localhost-network
+
+volumes:
+  vvveb-volume:
+  db:
 
 networks:
-  app-network:
+  localhost-network:
     driver: bridge

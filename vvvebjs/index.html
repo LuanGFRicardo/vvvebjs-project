@@ -9,12 +9,12 @@
     <div id="dados"></div>
 
     <script>
-    fetch('http://php_backend/exibir_dados.php')
+    fetch('http://localhost:8000/exibir_dados.php')
       .then(response => response.json())
       .then(data => {
           let html = '';
           data.forEach(item => {
-              html += `<p>ID: ${item.id} - Nome: ${item.nome}</p>`;
+              html += `ID: ${item.registro}`;
           });
           document.getElementById('dados').innerHTML = html;
       })
