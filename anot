@@ -1,0 +1,10 @@
+cd /etc/apache2/plesk.conf.d/vhosts/beautiful-lamport.172-17-0-2.plesk.page.conf
+
+<VirtualHost 127.0.0.1:80>
+    ServerName localhost
+    ...
+</VirtualHost>
+
+apachectl restart
+
+https://localhost/plesk-site-preview/test.com/https/localhost/Portfolio.html
