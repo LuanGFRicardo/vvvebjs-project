@@ -1,4 +1,10 @@
-cd /etc/apache2/plesk.conf.d/vhosts/beautiful-lamport.172-17-0-2.plesk.page.conf
+docker exec -it <container-id> bash
+
+apt-get update; apt-get install sudo
+
+sudo apt-get install nano
+
+nano /etc/apache2/plesk.conf.d/vhosts/<domain-name>
 
 <VirtualHost 127.0.0.1:80>
     ServerName localhost
@@ -7,4 +13,4 @@ cd /etc/apache2/plesk.conf.d/vhosts/beautiful-lamport.172-17-0-2.plesk.page.conf
 
 apachectl restart
 
-https://localhost/plesk-site-preview/test.com/https/localhost/Portfolio.html
+https://localhost/plesk-site-preview/test.com/https/localhost/Portfolio.htmlsd
