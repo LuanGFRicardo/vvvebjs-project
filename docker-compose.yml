@@ -1,5 +1,34 @@
 version: '3.9'
 services:
+  ubuntu:
+    image: ubuntu:latest
+    container_name: ubuntu_plesk
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: tail -f /dev/null
+    entrypoint: ["/bin/bash", "-c"]
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      - localhost-network
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    init: true
+
+  plesk:
+    image: plesk/plesk
+    container_name: plesk_server
+    privileged: true
+    ports:
+      - "8880:8880"  # Expõe a porta corretamente
+      - "443:443"    # HTTPS, caso necessário
+      - "80:80"      # HTTP, caso necessário
+    restart: always
+    networks:
+      - localhost-network
+
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: sql_server
