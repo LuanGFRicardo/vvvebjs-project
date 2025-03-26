@@ -7,7 +7,7 @@ $serverName = "sql_server,1433";
 $connectionOptions = array(
     "Database" => "master",
     "Uid" => "sa",
-    "PWD" => "1StrongPwd!!"
+    "PWD" => "YourStrong!Passw0rd"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 if ($conn === false) {

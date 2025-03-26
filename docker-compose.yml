@@ -30,15 +30,16 @@ services:
       - localhost-network
 
   sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sql_server
     environment:
-      SA_PASSWORD: "1StrongPwd!!"
-      ACCEPT_EULA: "Y"
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
     ports:
-      - "1433:1433"
+      - "1450:1433"
     networks:
-      - localhost-network
+        - localhost-network
+    restart: always
 
   backend:
     build: ./backend
