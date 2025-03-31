@@ -1,4 +1,4 @@
-# Projeto VVWEB + PHP + SQL Server com Docker
+# Projeto VVWEB com Docker
 
 ## Como rodar o projeto:
 
